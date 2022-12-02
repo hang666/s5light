@@ -1,4 +1,4 @@
-package s5light
+package server
 
 import (
 	"log"

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hang666/s5light"
+	s5light "github.com/hang666/s5light/server"
 	"github.com/urfave/cli/v2"
 )
 
