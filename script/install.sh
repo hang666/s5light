@@ -43,7 +43,7 @@ read bindaddress
 echo "Please input auth name: "
 read name
 echo "Please input auth password: "
-read whitelist
+read password
 
 
 
