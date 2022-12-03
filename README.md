@@ -20,3 +20,9 @@ The configuration file using YAML language.
 Please fill in the template according to "config.yaml.example", and save it as "config.yaml".
 
 You can also use the "--config" flag to customize the path to the config file.
+
+## Install Script:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/hang666/s5light/main/script/install.sh | bash
+```

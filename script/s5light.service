@@ -1,0 +1,15 @@
+[Unit]
+Description=s5light
+Documentation=https://github.com/hang666/s5light
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=/s5light/s5light
+WorkingDirectory=/s5light/
+
+[Install]
+WantedBy=multi-user.target
