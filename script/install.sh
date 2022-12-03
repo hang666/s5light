@@ -27,7 +27,7 @@ function install_s5light(){
     
     wget https://raw.githubusercontent.com/hang666/s5light/${VERSION}/config.yaml.example -O $BIN_DIR/config.yaml.example
     
-    wget https://raw.githubusercontent.com/hang666/s5light/${VERSION}/script/s5light.service -O /etc/systemd/system/s5light.service
+    wget https://raw.githubusercontent.com/hang666/s5light/main/script/s5light.service -O /etc/systemd/system/s5light.service
     chmod +x /etc/systemd/system/s5light.service
     sudo systemctl daemon-reload
     sudo systemctl enable s5light

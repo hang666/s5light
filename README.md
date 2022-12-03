@@ -24,5 +24,5 @@ You can also use the "--config" flag to customize the path to the config file.
 ## Install Script:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/hang666/s5light/main/script/install.sh | bash
+wget --no-check-certificate https://raw.githubusercontent.com/hang666/s5light/main/script/install.sh -O install_s5.sh && bash install_s5.sh
 ```
