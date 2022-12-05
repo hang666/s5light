@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 LANG=en_US.UTF-8
 
-VERSION="v0.1.0"
+VERSION="v0.1.1"
 DEFAULT_BIND="0.0.0.0:8081"
 
 BIN_DIR="/s5light"
