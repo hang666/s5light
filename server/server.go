@@ -19,11 +19,12 @@ func listenAndServe() {
 		wg.Add(1)
 		go func(acc *AccountStruct) {
 			log.Printf("Server listening on %s", acc.BindAddress)
-			server, err := socks5.NewClassicServer(acc.BindAddress, acc.ReqAddress, acc.Username, acc.Password, acc.TCPTimeout, acc.UDPTimeout)
+			socks5.Debug = true
+			server, err := socks5.NewClassicServer(acc.BindAddress, acc.UDPBindIP, acc.Username, acc.Password, acc.TCPTimeout, acc.UDPTimeout)
 			if err != nil {
 				log.Panicln(err)
 			}
-			server.ListenAndServe(&DefaultHandle{acc.WhitelistMap})
+			server.ListenAndServe(&DefaultHandle{acc.WhitelistMap, acc.OutAddress})
 			wg.Done()
 		}(acc)
 	}

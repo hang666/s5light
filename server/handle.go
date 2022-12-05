@@ -8,26 +8,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/hang666/s5light/server/s5"
 	"github.com/txthinking/socks5"
 )
 
 type DefaultHandle struct {
 	whitelistMap WhitelistMapType
-}
-
-func checkIsWhitelisted(address string, whitelistMap WhitelistMapType) bool {
-	//log.Printf("client come in: %s", address)
-	w_map := whitelistMap
-	if len(w_map) == 0 {
-		return true
-	}
-	var ok bool
-	if strings.Contains(address, ":") {
-		_, ok = w_map[strings.Split(address, ":")[0]]
-	} else {
-		_, ok = w_map[address]
-	}
-	return ok
+	outAddress   string
 }
 
 func (h *DefaultHandle) TCPHandle(s *socks5.Server, c *net.TCPConn, r *socks5.Request) error {
@@ -35,7 +22,7 @@ func (h *DefaultHandle) TCPHandle(s *socks5.Server, c *net.TCPConn, r *socks5.Re
 		return fmt.Errorf("%s is not whitelisted", c.RemoteAddr().String())
 	}
 	if r.Cmd == socks5.CmdConnect {
-		rc, err := r.Connect(c)
+		rc, err := s5.Connect(c, r, h.outAddress)
 		if err != nil {
 			return err
 		}

@@ -15,7 +15,8 @@ type AccountStruct struct {
 	Username     string   `yaml:"username"  mapstructure:"username"`
 	Password     string   `yaml:"password"  mapstructure:"password"`
 	BindAddress  string   `yaml:"bind_address"  mapstructure:"bind_address"`
-	ReqAddress   string   `yaml:"req_address"  mapstructure:"req_address"`
+	OutAddress   string   `yaml:"out_address" mapstructure:"out_address"`
+	UDPBindIP    string   `yaml:"udp_bind_ip"  mapstructure:"udp_bind_ip"`
 	Whitelist    []string `yaml:"whitelist"  mapstructure:"whitelist"`
 	TCPTimeout   int      `yaml:"tcp_timeout"  mapstructure:"tcp_timeout"`
 	UDPTimeout   int      `yaml:"udp_timeout" mapstructure:"udp_timeout"`

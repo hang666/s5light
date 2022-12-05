@@ -1,11 +1,13 @@
 accounts:
-  - username: "test"
-    password: "test123456"
-    bind_address: "0.0.0.0:8080"
-    req_address: ""
-    tcp_timeout: 60
-    udp_timeout: 60
-    whitelist:
+  - username: "test" # auth username
+    password: "test123456" # auth password
+    bind_address: "0.0.0.0:8080" # listen bind address + port
+    udp_bind_ip: "127.0.0.1" # udp bind ip
+    out_address: "192.168.100.165" # specify out local address
+    tcp_timeout: 60 # tcp timeout
+    udp_timeout: 60 # udp timeout
+    whitelist: # whitelist
       - "192.168.100.1"
       - "127.0.0.1"
-  - bind_address: "0.0.0.0:8081"
+  - bind_address: "0.0.0.0:8081" # bind 2
+    out_address: "" # auto out address
